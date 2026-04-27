@@ -121,6 +121,3 @@ Connect to device named **AirGuard** using any BLE scanner or a custom phone app
 
 The BME688 IAQ accuracy goes through 4 levels (0–3). The device logs `[WAIT] Sensors stabilising...` until accuracy ≥ 1. Full calibration (accuracy = 3) can take up to 30 minutes of continuous operation. Calibration state is saved to NVS every 10 minutes and restored on reboot.
 
-## License
-
-MIT
