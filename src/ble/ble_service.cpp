@@ -38,7 +38,7 @@ void BLEAirService::begin() {
     adv->addServiceUUID(BLE_SERVICE_UUID);
     adv->setScanResponse(true);
     adv->setMinPreferred(0x06); // helps iPhone connection
-    adv->setMinPreferred(0x12);
+    adv->setMaxPreferred(0x12);
     BLEDevice::startAdvertising();
 
     Serial.printf("[BLE] Advertising as \"%s\"\n", BLE_DEVICE_NAME);

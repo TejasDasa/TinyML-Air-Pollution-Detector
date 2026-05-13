@@ -121,7 +121,6 @@ void BME688Sensor::loadState() {
 
 void BME688Sensor::saveState() {
     uint8_t buf[BSEC_MAX_STATE_BLOB_SIZE];
-    uint32_t len = 0;
     bsec_.getState(buf);
     Preferences prefs;
     prefs.begin(NVS_NAMESPACE, /*readOnly=*/false);

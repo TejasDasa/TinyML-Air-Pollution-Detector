@@ -35,9 +35,9 @@ void ExposureTracker::update(const SensorReading &r) {
     if (r.aqs > session_max_aqs_) session_max_aqs_ = r.aqs;
 
     // Record waypoint (circular – overwrite oldest when full)
-    uint16_t idx = wp_count_ < MAX_WAYPOINTS ? wp_count_ : (MAX_WAYPOINTS - 1);
+    uint16_t idx = wp_count_ % MAX_WAYPOINTS;
     waypoints_[idx] = { r.aqs, r.rdr, r.aqi_composite, now };
-    if (wp_count_ < MAX_WAYPOINTS) wp_count_++;
+    wp_count_++;
 }
 
 void ExposureTracker::fillReading(SensorReading &r) const {
